@@ -31,3 +31,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 Angular Language Service
 Bootstrap4, Font Awesome4, ...
 TypeScript Hero
+
+## Book example code
+
+https://github.com/PacktPublishing/ASP.NET-Core-2-and-Angular-5
