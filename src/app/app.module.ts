@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router'; // import router
 import {CommonModule} from '@angular/common'; // figure out this
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'; // for service interceptors
 import {AngularFontAwesomeModule} from 'angular-font-awesome';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 // own components
 import {AppComponent} from './components/app/app.component';
@@ -14,6 +15,7 @@ import { RecipeComponent } from './components/recipe/recipe.component';
 import { ReviewComponent } from './components/review/review.component';
 import { UserComponent } from './components/user/user.component';
 import { RecipeListComponent } from './components/recipe/recipe-list/recipe-list.component';
+import { RecipeEditComponent } from './components/recipe/recipe-edit/recipe-edit.component';
 
 
 @NgModule({
@@ -25,12 +27,15 @@ import { RecipeListComponent } from './components/recipe/recipe-list/recipe-list
     RecipeComponent,
     ReviewComponent,
     UserComponent,
-    RecipeListComponent
+    RecipeListComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,
     CommonModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     AngularFontAwesomeModule,
     RouterModule.forRoot([
       { path: '', redirectTo: 'home', pathMatch: 'full' },

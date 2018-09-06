@@ -1,0 +1,54 @@
+<div class="recipe-edit">
+  <h2>{{title}}</h2>
+  <form [formGroup] ="form" (ngSubmit)="onSubmit()">
+      <div class="form-group"
+           [ngClass] ="{ 'has-error has-feedback' : hasError('Title') }">
+          <label for="title">Recipe title:</label>
+          <br />
+          <input type="text" id="title"
+                 formControlName="Title" required
+                 [(ngModel)]="recipe.Title"
+                 placeholder="choose a title..."
+                 class="form-control" />
+          <span *ngIf="hasError('Title')" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+          <div *ngIf="hasError('Title')" class="help-block">
+              Title is required field: please insert valid title.
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="description">Recipe description:</label>
+          <br />
+          <input type="text" id="description"
+                 formControlName="Description"
+                 [(ngModel)]="recipe.Description"
+                 placeholder="enter a description..."
+                 class="form-control" />
+      </div>
+      <div class="form-group">
+          <label for="instructions">Recipe instructions:</label>
+          <br />
+          <textarea id="instructions"
+                    formControlName="Instructions"
+                    [(ngModel)]="recipe.Instructions"
+                    placeholder="enter a instructions..."
+                    class="form-control"></textarea>
+      </div>
+      <div class="form-group commands">
+          <button *ngIf="editMode" type="submit"
+                  [disabled]="form.invalid"
+                  class="btn btn-success">
+              Apply Changes
+          </button>
+          <button *ngIf="!editMode" type="submit"
+                  [disabled]="form.invalid"
+                  class="btn btn-success">
+              Create the Quiz!
+          </button>
+          <button *ngIf="!editMode" type="submit"
+                  (click)="onBack()"
+                  class="btn btn-success">
+              Cancel
+          </button>
+      </div>
+  </form>
+</div>
