@@ -1,0 +1,20 @@
+<p>
+  recipe-list works!
+</p>
+
+<table class="table">
+<thead>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Instructions</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let recipe of recipes" [class.selected]="recipe === selectedRecipe" (click)="onSelect(recipe)">
+    <td>{{recipe.Title}}</td>
+    <td>{{recipe.Description}}</td>
+    <td>{{recipe.Instructions}}</td>
+  </tr>
+</tbody>
+</table>

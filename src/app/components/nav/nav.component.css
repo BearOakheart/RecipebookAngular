@@ -1,0 +1,15 @@
+.navbar-dark .navbar-brand {
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+li {
+    padding-left:20px;
+}
+
+.link-active a {
+    color:lightblue;
+}
